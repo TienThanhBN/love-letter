@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư tình tặng crush</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            top: 30%;
+            transform: translateY(-30%);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(-45deg);
+            animation: float 5s linear infinite;
+        }
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        .heart:after {
+            top: 0;
+            left: 10px;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1) rotate(-45deg);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-500px) scale(0.5) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Thư tình dành cho cậu ❤️</h1>
+    <p>
+        Cậu biết không? Tớ chẳng thể nào ngừng nghĩ về ánh mắt và nụ cười của cậu.
+        Cậu là ánh sáng làm rực rỡ ngày hôm của tớ, là bài hát dịu dàng mà tớ muốn nghe mãi.
+        Nếu cậu đọc được điều này, hãy biết rằng có một người luôn quan tâm và chờ đợi cậu. 💕
+    </p>
+    <p><strong>Mãi thích cậu!</strong></p>
+</div>
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(createHeart, 200);
+</script>
+</body>
+</html>
